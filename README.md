@@ -35,10 +35,6 @@ Steps to Use
 3. Run the `index.html` file to view the portfolio in your browser.
 
 
-Live Demo
-
-Check out the live version of my portfolio [here](https://Pooja22-tech.github.io).
-
 Contact
 
 Feel free to connect with me for any opportunities or inquiries:
