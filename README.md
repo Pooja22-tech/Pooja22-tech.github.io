@@ -31,9 +31,11 @@ Steps to Use
    ```bash
    cd Pooja22-tech.github.io
    ```
+index.html` file to view the portfolio in your browser.
 
-3. Run the `index.html` file to view the portfolio in your browser.
+Live Demo
 
+Check out the live version of my portfolio [here](https://Pooja22-tech.github.io).
 
 Contact
 
