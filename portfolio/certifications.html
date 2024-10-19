@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, rgb(147, 126, 3), #ecf0f1);
+            color: burlywood;
+            background-image: url('P4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+        }
+
+        .menu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .menu li {
+            margin-left: 8px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: sienna;
+            font-size: 1.0rem;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: goldenrod;
+        }
+
+        .certifications {
+            padding: 20px;
+            margin: 50px;
+            background-color: transparent;
+        }
+
+        h2 {
+            text-align: left;
+            color: goldenrod;
+            
+        }
+
+        .certification-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between; /* Aligns content to left and right */
+            align-items: center;
+        }
+
+        .certification-item h3 {
+            margin: 0;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Italic style for the certification title */
+        }
+
+        .certification-item p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .view-certificate {
+            text-decoration: none;
+            color: darkred;
+            font-weight: bold;
+            transition: color 0.3s;
+            margin-left: auto; /* Pushes the link to the right */
+        }
+
+        .view-certificate:hover {
+            color: darkblue;
+        }
+
+        .arrow-container {
+            position: fixed;
+            top: 40%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transform: translateY(-50%);
+            padding: 0 10px;
+            z-index: 10;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: blueviolet;
+            text-decoration: none;
+        }
+
+        .arrow:hover {
+            color: goldenrod;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack elements vertically */
+                justify-content: center; /* Center content */
+                align-items: center; /* Center items */
+                height: auto; /* Allow height to adjust */
+            }
+
+            .text-container, .image-container {
+                width: 90%; /* Use most of the width */
+                margin: 10px 0; /* Add margin between elements */
+            }
+
+            h1 {
+                font-size: 2rem; /* Smaller font size */
+                text-align: center; /* Center text */
+            }
+
+            .typing-text {
+                font-size: 1.5rem; /* Adjust font size */
+                text-align: center; /* Center text */
+            }
+
+            .menu ul {
+                flex-direction: column; /* Stack menu items vertically */
+                align-items: center; /* Center items */
+                width: 100%; /* Full width */
+            }
+
+            .menu li {
+                margin: 5px 0; /* Space between menu items */
+            }
+
+            .arrows {
+                display: none; /* Hide arrows on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i>About Me</a></li>
+            <li><a href="education.html"><i class="fas fa-graduation-cap"></i>Education</a></li>
+            <li><a href="skills.html"><i class="fas fa-cogs"></i>Skills</a></li>
+            <li><a href="projects.html"><i class="fas fa-folder"></i>Projects</a></li>
+            <li><a href="certifications.html"><i class="fas fa-certificate"></i>Certifications</a></li>
+            <li><a href="hobbies.html"><i class="fas fa-star"></i>Hobbies</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="certifications">
+        <h2>MY CERTIFICATIONS</h2>
+        <div class="certification-item">
+            <div>
+                <h3>Python for Absolute Beginners</h3>
+                <p>Issued Date: April 2023</p>
+            </div>
+            <a href="Pooja A Udemy certificate.pdf" class="view-certificate" target="_blank">View Certificate</a>
+        </div>
+        <div class="certification-item">
+            <div>
+                <h3>Basics of Python</h3>
+                <p>Issued Date: January 2024</p>
+            </div>
+            <a href="Pooja A Infosys Spring board python certificate.pdf" class="view-certificate" target="_blank">View Certificate</a>
+        </div>
+        <div class="certification-item">
+            <div>
+                <h3>Privacy and Security in Online Social Media</h3>
+                <p>Issued Date: July 2024</p>
+            </div>
+            <a href="Pooja A Mooc Certificate.pdf" class="view-certificate" target="_blank">View Certificate</a>
+        </div>
+        <div class="certification-item">
+            <div>
+                <h3>Machine Learning with Python</h3>
+                <p>Issued Date: September 2024</p>
+            </div>
+            <a href="POOJA A IBM CERTIFICATE (1).pdf" class="view-certificate" target="_blank">View Certificate</a>
+        </div>
+        <div class="certification-item">
+            <div>
+                <h3>Introduction to Cybersecurity Awareness</h3>
+                <p>Issued Date: October 2024</p>
+            </div>
+            <a href="hp course completion certificate.pdf" class="view-certificate" target="_blank">View Certificate</a>
+        </div>
+        <div class="certification-item">
+            <div>
+                <h3>Agile Project Management</h3>
+                <p>Issued Date: October 2024</p>
+            </div>
+            <a href="hp agile certificate.pdf" class="view-certificate" target="_blank">View Certificate</a>
+        </div>
+    </div>
+
+    <div class="arrow-container">
+        <a href="projects.html" class="arrow">&#10094;</a>
+        <a href="hobbies.html" class="arrow">&#10095;</a>
+    </div>
+
+</body>
+</html>

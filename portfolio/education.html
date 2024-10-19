@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #2c3e50, #bdc3c7);
+            padding: 20px;
+            background-image: url('edu.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow-x: hidden;
+        }
+
+        .text-container {
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Menu Styling */
+        .menu {
+            position: absolute;
+            top: -20px; /* Adjusted to move the menu upward */
+            right: -10px;
+            z-index: 10;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .menu li {
+            margin-left: 8px;
+        }
+
+        .menu a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: sienna;
+            font-size: 0.9rem;
+            padding: 8px;
+            transition: color 0.3s;
+        }
+
+        .menu a i {
+            margin-right: 5px;
+        }
+
+        .menu a:hover {
+            color: goldenrod;
+        }
+
+        /* "My Education" Heading */
+        .education-header {
+            position: absolute;
+            text-align: left;
+            color: whitesmoke;
+            top: -30px;
+            font-size: 2rem;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 40px; 
+            margin-left: -10px;/* Added margin for spacing */
+        }
+
+        /* Timeline Container */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto; /* Center the timeline */
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: goldenrod;
+            top: 10px;;
+            bottom: -50px;
+            left: 50%;
+            margin-left: -2px; /* Centers the divider on the page */
+        }
+
+        /* Bullets on Vertical Divider */
+        .bullet {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: sienna;
+            border-radius: 50%;
+            z-index: 1;
+            left: calc(50% - 8px); /* Align bullets with the divider */
+        }
+
+        /* Set the bullet position to be dynamically calculated */
+        .bullet:nth-child(1) {
+            top: 50px;
+        }
+
+        .bullet:nth-child(2) {
+            top: 180px;
+        }
+
+        .bullet:nth-child(3) {
+            top: 300px;
+        }
+
+        .bullet:nth-child(4) {
+            top: 420px;
+        }
+
+        /* Timeline Items */
+        .container {
+            padding: 5px 10px;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.6); /* Added transparency */
+            width: 48%;
+        }
+
+        .container.left {
+            left: -2px;
+            top:20px;
+        }
+
+        .container.right {
+            left: 54%; /* Reduced the gap from the vertical divider */
+            top: 20px;
+        }
+
+        /* Card Styling */
+        .card {
+            padding: 8px;
+            background-color: rgba(255, 255, 255, 0.8); /* Transparency for the cards */
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 1rem;
+        }
+
+        .card p {
+            margin: 5px 0;
+            font-size: 0.8rem;
+        }
+
+        /* Adjust positions */
+        .container.left .card {
+            transform: translateX(-15%); /* Reduced left shift */
+        }
+
+        .container.right .card {
+            transform: translateX(-10%); /* Reduced right shift */
+        }
+
+        /* Arrow Navigation */
+        .arrow-container {
+            position: fixed;
+            top: 40%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transform: translateY(-50%);
+            padding: 0 10px;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: blueviolet;
+            text-decoration: none;
+        }
+
+        .arrow:hover {
+            color: goldenrod;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 25px;
+            }
+
+            .container.left .card,
+            .container.right .card {
+                transform: translateX(0);
+            }
+
+            .timeline::after {
+                left: calc(50% - 2px);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack elements vertically */
+                justify-content: center; /* Center content */
+                align-items: center; /* Center items */
+                height: auto; /* Allow height to adjust */
+            }
+
+            .text-container, .image-container {
+                width: 90%; /* Use most of the width */
+                margin: 10px 0; /* Add margin between elements */
+            }
+
+            h1 {
+                font-size: 2rem; /* Smaller font size */
+                text-align: center; /* Center text */
+            }
+
+            .typing-text {
+                font-size: 1.5rem; /* Adjust font size */
+                text-align: center; /* Center text */
+            }
+
+            .menu ul {
+                flex-direction: column; /* Stack menu items vertically */
+                align-items: center; /* Center items */
+                width: 100%; /* Full width */
+            }
+
+            .menu li {
+                margin: 5px 0; /* Space between menu items */
+            }
+
+            .arrows {
+                display: none; /* Hide arrows on mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-container">
+        <!-- "My Education" Heading -->
+        <h1 class="education-header">My Education</h1>
+
+        <!-- Menu -->
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i>About Me</a></li>
+                <li><a href="education.html"><i class="fas fa-graduation-cap"></i>Education</a></li>
+                <li><a href="skills.html"><i class="fas fa-cogs"></i>Skills</a></li>
+                <li><a href="projects.html"><i class="fas fa-folder"></i>Projects</a></li>
+                <li><a href="certifications.html"><i class="fas fa-certificate"></i>Certifications</a></li>
+                <li><a href="hobbies.html"><i class="fas fa-star"></i>Hobbies</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Timeline -->
+        <div class="timeline">
+            <!-- Add bullets on the vertical line -->
+            <div class="bullet"></div>
+            <div class="bullet"></div>
+            <div class="bullet"></div>
+            <div class="bullet"></div>
+
+            <!-- Master of Computer Applications (MCA) -->
+            <div class="container left">
+                <div class="card">
+                    <h3>Master of Computer Applications (MCA)</h3>
+                    <p>RNS Institute of Technology</p>
+                    <p>Channasandra, Bengaluru</p>
+                    <p>CGPA: 9.7 (4th sem)</p>
+                </div>
+            </div>
+
+            <!-- Bachelor of Computer Applications (BCA) -->
+            <div class="container right">
+                <div class="card">
+                    <h3>Bachelor of Computer Applications (BCA)</h3>
+                    <p>RNS First Grade College</p>
+                    <p>Channasandra, Bengaluru</p>
+                    <p>CGPA: 9.36</p>
+                </div>
+            </div>
+
+            <!-- PUC -->
+            <div class="container left">
+                <div class="card">
+                    <h3>PUC (PCME)</h3>
+                    <p>Mahesh PU College</p>
+                    <p>ISRO Layout, Bengaluru</p>
+                    <p>Percentage: 87.3%</p>
+                </div>
+            </div>
+
+            <!-- School -->
+            <div class="container right">
+                <div class="card">
+                    <h3>School</h3>
+                    <p>Modern English School</p>
+                    <p>Arehalli, Bengaluru</p>
+                    <p>Percentage: 86%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Arrow Navigation -->
+        <div class="arrow-container">
+            <a href="about.html" class="arrow">&#10094;</a>
+            <a href="skills.html" class="arrow">&#10095;</a>
+        </div>
+    </div>
+</body>
+
+</html>

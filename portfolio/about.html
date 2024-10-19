@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* Prevent scrolling */
+            background-image: url('a1.jpg'); /* Add your background image here */
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat;
+            image-rendering: -webkit-optimize-contrast; /* For Webkit browsers */
+            image-rendering: crisp-edges; /* To enhance sharpness */
+            image-rendering: pixelated; /* Non-standard, but can help */
+        }
+
+        .container {
+            display: flex;
+            height: 80vh; /* Keep height at 80vh */
+            align-items: center; /* Center items vertically */
+            padding: 20px; /* Add padding around the container */
+            margin: 0 0 0 10%; /* Add margin to the left to push the container to the right */
+        }
+
+        .vertical-divider {
+            width: 10px; /* Width of the divider */
+            background-color: black; /* Color of the divider */
+            height: 80%; /* Height of the divider */
+            margin: 0 10px; /* Horizontal margin for the divider */
+        }
+
+        .about-me-container {
+            width: 900px; /* Increased width for the container */
+            height: auto; /* Maintain auto height for content */
+            overflow: hidden; /* Ensure the content fits the container */
+            border: 2px solid #fff; /* Border for visibility */
+            border-radius: 8px; /* Round corners */
+            padding: 20px; /* Padding inside the container */
+            background-color: rgba(0, 0, 0, 0.5); /* Dark background for contrast */
+            color: white; /* White text */
+            margin-left: 20px; /* Space from the divider */
+            line-height: 1.5; /* Adjust line height for spacing */
+            font-family: 'Georgia', serif; /* Preferred font */
+        }
+
+        .about-me-container h2 {
+            margin-bottom: 15px; /* Add this line to create space below the heading */
+        }
+
+        .about-me-container p {
+            margin-top: 10px; /* Add this line to create space above the paragraph */
+        }
+
+        h1 {
+            margin: 5px 0; /* Remove default margin */
+            color: black; /* Change color for the heading */
+            text-align: left; /* Left align the heading */
+            font-weight: bold; /* Make heading bold */
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Stylish font style */
+            padding-bottom: 10px; /* Space below the heading */
+            flex: 0; /* Prevent the heading from growing */
+            margin-left: -90px; /* Move heading to the left */
+            margin-right: 30px;
+            font-size: 60px;
+        }
+
+        .arrow-container {
+            position: fixed;
+            top: 40%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transform: translateY(-50%);
+            padding: 0 10px;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: blueviolet;
+            text-decoration: none;
+        }
+
+        .arrow:hover {
+            color: goldenrod;
+        }
+
+        .page-footer {
+            background-color: gray; /* Set background to black */
+            color: black; /* Set text color to white */
+            padding: 20px; /* Padding for spacing */
+            text-align: center; /* Center the text */
+            position: relative; /* Position relative to the page */
+            bottom: 0; /* Position at the bottom */
+            width: 100%; /* Full width */
+            margin-top: 20px; /* Space above the footer */
+        }
+
+        .page-footer p {
+            margin: 0; /* Remove default margins */
+            font-weight: bold; /* Make text bold */
+            text-transform: uppercase; /* Transform text to uppercase */
+            letter-spacing: 2px;
+            font-style: italic;
+        }
+
+        .page-footer {
+            position: fixed; /* Fixed at the bottom */
+            bottom: 45px; /* Position at the bottom */
+            left: 0; /* Align to the left */
+            right: 0; /* Align to the right */
+        }
+        
+        .menu {
+            position: absolute; /* Positioning the menu */
+            top: 5px; /* Distance from top */
+            right: 10px; /* Distance from right */
+            z-index: 10; /* Make sure it's above other elements */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .menu ul {
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+            display: flex; /* Display in a single line */
+        }
+
+        .menu li {
+            margin-left: 8px; /* Adjusted space between menu items */
+        }
+
+        .menu a {
+            display: flex; /* Aligns icon and text in a row */
+            text-decoration: none; /* Removes underline from links */
+            color: sienna; /* Stylish color for menu items */
+            font-size: 1.0rem; /* Adjust font size for menu */
+            padding: 10px; /* Adds padding for clickable area */
+            transition: color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .menu a:hover {
+            color: goldenrod; /* Color change on hover */
+        }
+
+        .menu a i {
+            margin-right: 5px; /* Space between icon and text */
+            transition: transform 0.3s; /* Smooth scaling effect */
+        }
+
+        .menu a:hover i {
+            transform: scale(1.2); /* Scale icon on hover */
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack elements vertically */
+                justify-content: center; /* Center content */
+                align-items: center; /* Center items */
+                height: auto; /* Allow height to adjust */
+            }
+
+            .text-container, .image-container {
+                width: 90%; /* Use most of the width */
+                margin: 10px 0; /* Add margin between elements */
+            }
+
+            h1 {
+                font-size: 2rem; /* Smaller font size */
+                text-align: center; /* Center text */
+            }
+
+            .typing-text {
+                font-size: 1.5rem; /* Adjust font size */
+                text-align: center; /* Center text */
+            }
+
+            .menu ul {
+                flex-direction: column; /* Stack menu items vertically */
+                align-items: center; /* Center items */
+                width: 100%; /* Full width */
+            }
+
+            .menu li {
+                margin: 5px 0; /* Space between menu items */
+            }
+
+            .arrows {
+                display: none; /* Hide arrows on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i>About Me</a></li>
+                <li><a href="education.html"><i class="fas fa-graduation-cap"></i>Education</a></li>
+                <li><a href="skills.html"><i class="fas fa-cogs"></i>Skills</a></li>
+                <li><a href="projects.html"><i class="fas fa-folder"></i>Projects</a></li>
+                <li><a href="certifications.html"><i class="fas fa-certificate"></i>Certifications</a></li>
+                <li><a href="hobbies.html"><i class="fas fa-star"></i>Hobbies</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+            </ul>
+        </nav>
+    
+        <div class="container">
+            <h1>A GLIMPSE OF ME</h1>
+            <div class="vertical-divider"></div>
+            <div class="about-me-container">
+                <p>
+                    Hello!</p>
+                <p>I recently graduated with a Master of Computer Applications (MCA) degree, fueling my passion for technology and innovation. I am an enthusiastic individual, constantly exploring the boundaries of my knowledge and creativity. I love to immerse myself in various projects that challenge my skills and broaden my understanding of the tech world. I am eager to leverage my education and experience to contribute positively in a professional environment.
+                </p>
+                <p>
+                    In my free time, you can find me indulging in my passion for pencil sketching and drawing, expressing my thoughts and emotions through art. I also enjoy delving into literature, often lost in gripping novels that transport me to different worlds. Music is my constant companion; whether it's a soothing melody or an upbeat tune, I find joy and inspiration in every note.
+                </p>
+                <p>
+                    My energetic spirit and insatiable curiosity drive me to embrace new challenges and adventures. I believe in lifelong learning and am always eager to discover something new. As I embark on my professional journey, I am excited to combine my technical skills with my creative passions to make a meaningful impact.
+                </p>
+               <!-- Your existing content here -->
+
+                <footer class="page-footer">
+                    <p><strong>With a pencil in hand and melodies in my heart, I bring my imagination to life.</strong></p>
+                    
+                </footer>
+
+              
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="arrow-container">
+        <a href="index.html" class="arrow"><i class="arrow left-arrow">&#10094;</i></a>
+        <a href="education.html" class="arrow"><i class="arrow right-arrow">&#10095;</i></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ecf0f1;
+            color: #333;
+            background-image: url('sk2.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow-x: hidden;
+        }
+
+        /* Arrow Navigation */
+        .arrow-container {
+            position: fixed;
+            top: 40%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transform: translateY(-50%);
+            padding: 0 10px;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: blueviolet;
+            text-decoration: none;
+        }
+
+        .arrow:hover {
+            color: goldenrod;
+        }
+
+        /* Menu Style (Unchanged) */
+        .menu {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            z-index: 10;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .menu li {
+            margin-left: 8px;
+        }
+
+        .menu a {
+            display: flex;
+            text-decoration: none;
+            color: sienna;
+            font-size: 1.0rem;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: goldenrod;
+        }
+
+        .menu a i {
+            margin-right: 5px;
+            transition: transform 0.3s;
+        }
+
+        .menu a:hover i {
+            transform: scale(1.2);
+        }
+
+        /* Soft Skills */
+        .soft-skills {
+            margin-top: 60px;
+            margin-left: 40px;;
+            text-align: left; /* Align to left */
+        }
+
+        .soft-skill {
+            display: flex; /* Use flex for alignment */
+            align-items: center; /* Center items vertically */
+            margin-left:  40px;;
+            font-size: 1.5rem;
+            color: whitesmoke; /* Icon color */
+            transition: color 0.3s ease, transform 0.3s ease;
+            font-weight: bold;
+            line-height: 2;
+        }
+
+        .soft-skill i {
+            margin-right: 10px; /* Space between icon and text */
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 50px;
+            text-align: left; 
+        
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: goldenrod;
+            margin-bottom: 20px;
+            margin-left: 40px;
+            margin-top: -20px;;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-direction: column; /* Stacking skills vertically */
+            width: 50%; /* Limit width */
+        }
+
+        .skill {
+            display: flex;
+            align-items: center;
+            margin: 10px 0; /* Space between skills */
+            color: beige;
+            font-weight: bold; /* Skill name color */
+        }
+
+        .skill-name {
+            flex: 1; /* Take up remaining space */
+            font-size: 1.2rem;
+            position: relative;
+            padding-left: 30px; /* Space for bullet */
+        }
+
+        .skill-name::before {
+            content: '•'; /* Bullet before skill name */
+            position: absolute;
+            left: 10px; /* Position bullet */
+            color: #3498db; /* Bullet color */
+            font-size: 1.5rem; /* Bullet size */
+        }
+
+        .skill-bar-container {
+            flex: 1; /* Occupy space next to skill name */
+            background-color: #bdc3c7; /* Background for the bar container */
+            border-radius: 5px; /* Rounded edges */
+            position: relative;
+            height: 30px; /* Height of the skill bar */
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        .skill-bar {
+            height: 100%; /* Full height */
+            width: 0; /* Start from 0 for animation */
+            border-radius: 5px; /* Rounded edges */
+            transition: width 0.5s ease-in-out; /* Smooth fill */
+        }
+
+        /* Specific skill bar colors */
+        .python { background-color: darkgreen; }
+        .javascript { background-color: gold; }
+        .html { background-color: lightblue; }
+        .css { background-color: lightcoral; }
+        .java { background-color: orange; }
+        .sql { background-color: purple; }
+
+        .percentage {
+            position: absolute;
+            right: 10px; /* Position percentage text */
+            color: whitesmoke; /* Text color */
+            font-weight: bold; /* Make percentage bold */
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack elements vertically */
+                justify-content: center; /* Center content */
+                align-items: center; /* Center items */
+                height: auto; /* Allow height to adjust */
+            }
+
+            .text-container, .image-container {
+                width: 90%; /* Use most of the width */
+                margin: 10px 0; /* Add margin between elements */
+            }
+
+            h1 {
+                font-size: 2rem; /* Smaller font size */
+                text-align: center; /* Center text */
+            }
+
+            .typing-text {
+                font-size: 1.5rem; /* Adjust font size */
+                text-align: center; /* Center text */
+            }
+
+            .menu ul {
+                flex-direction: column; /* Stack menu items vertically */
+                align-items: center; /* Center items */
+                width: 100%; /* Full width */
+            }
+
+            .menu li {
+                margin: 5px 0; /* Space between menu items */
+            }
+
+            .arrows {
+                display: none; /* Hide arrows on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Arrow Navigation -->
+    <div class="arrow-container">
+        <a href="education.html" class="arrow">&#10094;</a>
+        <a href="projects.html" class="arrow">&#10095;</a>
+    </div>
+
+    <!-- Menu -->
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i>About Me</a></li>
+            <li><a href="education.html"><i class="fas fa-graduation-cap"></i>Education</a></li>
+            <li><a href="skills.html"><i class="fas fa-cogs"></i>Skills</a></li>
+            <li><a href="projects.html"><i class="fas fa-folder"></i>Projects</a></li>
+            <li><a href="certifications.html"><i class="fas fa-certificate"></i>Certifications</a></li>
+            <li><a href="hobbies.html"><i class="fas fa-star"></i>Hobbies</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Soft Skills -->
+    <div class="soft-skills">
+        <h1>SOFT SKILLS</h1>
+        <div class="soft-skill"><i class="fas fa-lightbulb"></i> Strong problem-solving abilities </div>
+        <div class="soft-skill"><i class="fas fa-users"></i> Basic understanding of analyzing patterns and data.  </div>
+        <div class="soft-skill"><i class="fas fa-comments"></i> Quick to learn new data tools and technologies.  </div>
+        <div class="soft-skill"><i class="fas fa-thumbs-up"></i> Adaptable to different environments. </div>
+        <div class="soft-skill"><i class="fas fa-clock"></i> Eager to learn new technologies.</div>
+    </div>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <h1>TECHNICAL SKILLS</h1>
+        <div class="skills-container">
+            <div class="skill" data-skill="80">
+                <div class="skill-name">Python</div>
+                <div class="skill-bar-container">
+                    <div class="skill-bar python"></div>
+                    <span class="percentage">80%</span>
+                </div>
+            </div>
+            <div class="skill" data-skill="75">
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-bar-container">
+                    <div class="skill-bar javascript"></div>
+                    <span class="percentage">75%</span>
+                </div>
+            </div>
+            <div class="skill" data-skill="90">
+                <div class="skill-name">HTML</div>
+                <div class="skill-bar-container">
+                    <div class="skill-bar html"></div>
+                    <span class="percentage">90%</span>
+                </div>
+            </div>
+            <div class="skill" data-skill="85">
+                <div class="skill-name">CSS</div>
+                <div class="skill-bar-container">
+                    <div class="skill-bar css"></div>
+                    <span class="percentage">85%</span>
+                </div>
+            </div>
+            <div class="skill" data-skill="70">
+                <div class="skill-name">Java</div>
+                <div class="skill-bar-container">
+                    <div class="skill-bar java"></div>
+                    <span class="percentage">70%</span>
+                </div>
+            </div>
+            <div class="skill" data-skill="65">
+                <div class="skill-name">SQL</div>
+                <div class="skill-bar-container">
+                    <div class="skill-bar sql"></div>
+                    <span class="percentage">65%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const skills = document.querySelectorAll('.skill');
+
+            skills.forEach(skill => {
+                const percentage = skill.getAttribute('data-skill');
+                const skillBar = skill.querySelector('.skill-bar');
+                
+                // Set the width of the skill bar and keep the filled state
+                skillBar.style.width = `${percentage}%`;
+            });
+        });
+    </script>
+
+</body>
+</html>

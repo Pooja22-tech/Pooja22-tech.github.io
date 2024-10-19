@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #004d4d, #ecf0f1);
+            color: #fff;
+            background-image: url('c2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+        }
+
+        .arrow-container {
+            position: fixed;
+            top: 40%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transform: translateY(-50%);
+            padding: 0 10px;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: blueviolet;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .arrow:hover {
+            color: goldenrod;
+        }
+
+        .menu {
+            position: absolute; 
+            top: 5px; 
+            right: 10px; 
+            z-index: 10; 
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .menu ul {
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+        }
+
+        .menu li {
+            margin-left: 8px; 
+        }
+
+        .menu a {
+            display: flex; 
+            text-decoration: none; 
+            color: sienna; 
+            font-size: 1.0rem; 
+            padding: 10px; 
+            transition: color 0.3s; 
+        }
+
+        .menu a:hover {
+            color: goldenrod; 
+        }
+
+        .menu a i {
+            margin-right: 5px; 
+            transition: transform 0.3s; 
+        }
+
+        .menu a:hover i {
+            transform: scale(1.2); 
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            
+            justify-content: left;
+            height: 100vh;
+            margin-top: 60px;
+            margin-left: 80px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-info {
+            font-size: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: goldenrod;
+        }
+
+        .icon {
+            margin-right: 10px;
+            color: goldenrod;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack elements vertically */
+                justify-content: center; /* Center content */
+                align-items: center; /* Center items */
+                height: auto; /* Allow height to adjust */
+            }
+
+            .text-container, .image-container {
+                width: 90%; /* Use most of the width */
+                margin: 10px 0; /* Add margin between elements */
+            }
+
+            h1 {
+                font-size: 2rem; /* Smaller font size */
+                text-align: center; /* Center text */
+            }
+
+            .typing-text {
+                font-size: 1.5rem; /* Adjust font size */
+                text-align: center; /* Center text */
+            }
+
+            .menu ul {
+                flex-direction: column; /* Stack menu items vertically */
+                align-items: center; /* Center items */
+                width: 100%; /* Full width */
+            }
+
+            .menu li {
+                margin: 5px 0; /* Space between menu items */
+            }
+
+            .arrows {
+                display: none; /* Hide arrows on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i>About Me</a></li>
+            <li><a href="education.html"><i class="fas fa-graduation-cap"></i>Education</a></li>
+            <li><a href="skills.html"><i class="fas fa-cogs"></i>Skills</a></li>
+            <li><a href="projects.html"><i class="fas fa-folder"></i>Projects</a></li>
+            <li><a href="certifications.html"><i class="fas fa-certificate"></i>Certifications</a></li>
+            <li><a href="hobbies.html"><i class="fas fa-star"></i>Hobbies</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="arrow-container">
+        <a href="hobbies.html" class="arrow">&#10094;</a>
+        <a href="index.html" class="arrow">&#10095;</a>
+    </div>
+
+    <div class="contact-container">
+        <h1>Connect with Me!!</h1>
+        <div class="contact-info">
+            <p><i class="fas fa-phone icon"></i> Phone: 9019292559</p>
+            <p><i class="fas fa-envelope icon"></i> Email: <a href="mailto:alluripooja234@gmail.com">alluripooja234@gmail.com</a></p>
+            <p><i class="fab fa-linkedin icon"></i> LinkedIn: <a href="https://www.linkedin.com/in/pooja-a-092b33227/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Pooja A</a></p>
+            <p><i class="fab fa-instagram icon"></i> Instagram: <a href="https://www.instagram.com/_pooja.a__/profilecard/?igsh=d3FiajA5YTJjdzVt">@_pooja.a__</a></p>
+        </div>
+    </div>
+</body>
+</html>

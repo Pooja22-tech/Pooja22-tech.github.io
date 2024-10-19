@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Projects Portfolio</title>
+    <style>
+        
+        body {
+            background-color: #38608b; /* Blue color for the background */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #4a4a4a; /* Darker text color for better contrast */
+            margin: 0;
+            padding: 20px;
+            background-image: url('p1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+        }
+
+        .arrow-container {
+            position: fixed;
+            top: 40%;
+            left: 0; /* Keep it fixed to the left */
+            right: 0; /* Keep it fixed to the right */
+            display: flex;
+            justify-content: space-between; /* Keep space between arrows */
+            align-items: center;
+            transform: translateY(-50%); /* Center vertically */
+            z-index: 10; /* Ensure arrows are above other elements */
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: BlueViolet; /* Arrow color set to BlueViolet */
+            text-decoration: none;
+            margin: 0 20px; /* Add margin to the arrows for more space */
+        }
+
+        .arrow:hover {
+            color: goldenrod;
+        }
+
+        .menu {
+            position: absolute; /* Positioning the menu */
+            top: 5px; /* Distance from top */
+            right: 10px; /* Distance from right */
+            z-index: 10; /* Make sure it's above other elements */
+        }
+
+        .menu ul {
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+            display: flex; /* Display in a single line */
+        }
+
+        .menu li {
+            margin-left: 8px; /* Adjusted space between menu items */
+        }
+
+        .menu a {
+            display: flex; /* Aligns icon and text in a row */
+            text-decoration: none; /* Removes underline from links */
+            color: Sienna; /* Menu color set to Sienna */
+            font-size: 1.0rem; /* Adjust font size for menu */
+            padding: 10px; /* Adds padding for clickable area */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .menu a:hover {
+            color: goldenrod;
+        }
+
+
+        .projects {
+            margin-top: 60px;
+            text-align: left; /* Align text to the left */
+        }
+
+        .projects h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px; /* Space below the heading */
+            color: wheat; /* Stylish color for the heading */
+        }
+
+        .project {
+            margin-bottom: 40px; /* Space between each project */
+            padding: 20px; /* Space inside each project */
+            background-color: rgba(255, 255, 255, 0.3); /* Slightly transparent background for the project container */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        .project h2 {
+            color: #f0db4f; /* Stylish color for project titles */
+            font-size: 1.8rem;
+        }
+
+        .project p {
+            font-size: 1.2rem;
+            color: black; /* Color for the description text */
+        }
+
+        .image-gallery {
+            display: flex; /* Use flexbox for layout */
+            flex-wrap: wrap; /* Allow images to wrap to the next line */
+            justify-content: space-between; /* Space between images */
+            margin-top: 10px; /* Space above the gallery */
+            position: relative; /* Make the container relative */
+        }
+
+        .image-item {
+            flex: 0 0 calc(33.33% - 10px); /* Set width to one-third of the container minus margin */
+            margin-bottom: 20px; /* Add some space between rows */
+            box-sizing: border-box; /* Ensure padding and margin are included in total width */
+            min-height: 200px; /* Optional: set a minimum height for better layout */
+        }
+
+        .image-gallery img {
+            flex: 0 1 calc(33.33% - 10px); /* Allow 3 images in a row with gaps */
+            max-width: 100%; /* Prevent overflow */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5px; /* Rounded corners for images */
+            margin-top: 10px; /* Space above the image */
+            /* Remove max-height to prevent cropping */
+            object-fit: contain; /* Ensure images are fully displayed without cropping */
+            transition: transform 0.3s; /* Animation effect on hover */
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.2); /* Enlarge the image on hover */
+            z-index: 1; /* Bring the hovered image to the front */
+        }
+
+        .image-description {
+            display: none; /* Hide description by default */
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9); /* White background with transparency */
+            padding: 20px; /* Increase padding for more space */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for the description */
+            max-width: 300px; /* Increase max width for the description */
+            z-index: 2; /* Ensure it's above other content */
+            font-size: 1.3em; /* Slightly increase font size for better readability */
+            line-height: 1.5; /* Improve line spacing */
+        }
+
+        .image-gallery img:hover + .image-description {
+            display: block; /* Show description on hover */
+        }
+
+
+
+        .image-gallery img:hover + .image-description {
+            display: block; /* Show description on hover */
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack elements vertically */
+                justify-content: center; /* Center content */
+                align-items: center; /* Center items */
+                height: auto; /* Allow height to adjust */
+            }
+
+            .text-container, .image-container {
+                width: 90%; /* Use most of the width */
+                margin: 10px 0; /* Add margin between elements */
+            }
+
+            h1 {
+                font-size: 2rem; /* Smaller font size */
+                text-align: center; /* Center text */
+            }
+
+            .typing-text {
+                font-size: 1.5rem; /* Adjust font size */
+                text-align: center; /* Center text */
+            }
+
+            .menu ul {
+                flex-direction: column; /* Stack menu items vertically */
+                align-items: center; /* Center items */
+                width: 100%; /* Full width */
+            }
+
+            .menu li {
+                margin: 5px 0; /* Space between menu items */
+            }
+
+            .arrows {
+                display: none; /* Hide arrows on mobile */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="arrow-container">
+        <a href="skills.html" class="arrow">&#10094;</a>
+        <a href="certifications.html" class="arrow">&#10095;</a>
+    </div>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i>About Me</a></li>
+            <li><a href="education.html"><i class="fas fa-graduation-cap"></i>Education</a></li>
+            <li><a href="skills.html"><i class="fas fa-cogs"></i>Skills</a></li>
+            <li><a href="projects.html"><i class="fas fa-folder"></i>Projects</a></li>
+            <li><a href="certifications.html"><i class="fas fa-certificate"></i>Certifications</a></li>
+            <li><a href="hobbies.html"><i class="fas fa-star"></i>Hobbies</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="projects">
+        <h1>My Projects</h1>
+
+        <div class="project">
+            <h2>ACCIDENT FORESIGHT ALERT</h2>
+            <p><strong> Built a predictive safety system to prevent accidents.</strong></p>
+            <p><strong style="color: goldenrod;">Technologies Used:</strong> Python, Flask, Machine Learning Algorithms.</p>
+            <p><strong style="color: goldenrod;">Objective:</strong> To improve safety and prevent accidents across a span of industries, the Accident 
+                Foresight Alert project aims to construct an advanced predictive system utilizing 
+                Python and machine learning (ML) models. The goal of this system is to evaluate data 
+                in real time as well as past data to find trends and high-risk situations that can result in 
+                mishaps. The project aims to enable proactive responses by reducing the possibility of 
+                events, protecting human life, and limiting the contexts and finances by means of timely alerts. The intention is to develop a reliable, scalable, and effective mechanism 
+                that functions well with current infrastructures and guarantees accurate predictions 
+                while reducing false alarms. This will eventually promote a proactive risk 
+                management culture and increase operational safety. </p>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="AFA1_page-0001.jpg" alt="Accident Foresight Alert Screenshot 1">
+                    <div class="image-description"><b>Home Page</b><br/>
+                        <i>The figure shows the home page of the accident foresight alert project. It has login 
+                        button which allows the user to enter the login credentials.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="AFA2_page-0001.jpg" alt="Accident Foresight Alert Screenshot 2">
+                    <div class="image-description"><b>Login Page</b><br/>
+                        <i>The figure shows the login page. In this login page the user need to enter name 
+                        and password to access the further information.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="AFA3_page-0001.jpg" alt="Accident Foresight Alert Screenshot 3">
+                    <div class="image-description"> <b>Upload Page</b><br/>
+                        <i>The figure shows the upload page. In this page we can upload our dataset to train 
+                        it for the prediction.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="AFA4_page-0001.jpg" alt="Accident Foresight Alert Screenshot 4">
+                    <div class="image-description"><b>Training the Model</b><br/>
+                        <i>The figure shows the dataset. It displays the dataset information and further by 
+                        clicking on the click to train/test button the algorithms will be implemented for the 
+                        prediction.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="AFA5_page-0001.jpg" alt="Accident Foresight Alert Screenshot 5">
+                    <div class="image-description"><b>Training the Model</b><br/>
+                        <i>The figure shows the dataset. It displays the dataset information and further by 
+                        clicking on the click to train/test button the algorithms will be implemented for the 
+                        prediction.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="AFA6_page-0001.jpg" alt="Accident Foresight Alert Screenshot 6">
+                    <div class="image-description"><b>Dataset</b><br/>
+                    <i>Here we enter the details about the areas to predict whether the accidents happen or not.</i>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="AFA7_page-0001.jpg" alt="Accident Foresight Alert Screenshot 6">
+                    <div class="image-description"><b>Prediction</b><br/>
+                        <i>It is a prediction page. In this, if we enter the details of the 
+                        dataset and click on predict, it will further estimate the probability of a traffic accident.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="AFA8_page-0001.jpg" alt="Accident Foresight Alert Screenshot 6">
+                    <div class="image-description"> <b>Prediction</b><br/>
+                        <i>It is a prediction page. In this, if we enter the details of the 
+                        dataset and click on predict, it will further estimate the probability of a traffic accident.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="AFA9_page-0001.jpg" alt="Accident Foresight Alert Screenshot 6">
+                    <div class="image-description"><b>Performance Analysis</b><br/>
+                        <i>The figure shows the performance analysis. It displays the precision and recall 
+                        based on models. It shows how accurate is the result shown. It also displays the
+                        confusion matrix.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="AFA10_page-0001.jpg" alt="Accident Foresight Alert Screenshot 6">
+                    <div class="image-description"><b>Visualization</b><br/>
+                        <i>The charts are displayed. It shows pie charts and bar charts that 
+                        graphically depict past accidents according to age and gender.</i></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>TRENDY TREASURE - ECOMMERCE WEB APPLICATION</h2>
+            <p><strong>Built an easy-to-use and secure eCommerce website to improve online shopping and customer satisfaction.</strong></p>
+            <p ><strong style="color: goldenrod;">Technologies Used:</strong> HTML, CSS, JavaScript, SQL.</p>
+            <p><strong style="color: goldenrod;">Objective:</strong>  The objective of this project is to create a comprehensive e-commerce platform that connects vendors and customers through a user-friendly interface for browsing and managing products. Vendors can register, add, and view their products, while customers can easily browse items and add them to their carts. The platform will feature secure authentication for both vendors and customers, intuitive search and filtering options, and a responsive design for accessibility across devices. Additionally, it will include inventory management tools for vendors and customer support channels to enhance the overall user experience.</p>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="1.jpeg" alt="eCommerce Website Screenshot 1">
+                    <div class="image-description"><b>Sign-up Page</b><br/>
+                        <i>The signup page allows the user to create an account as vendor or customer where the user 
+                        needs to add the username and password to create an account.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="2.jpeg" alt="eCommerce Website Screenshot 2">
+                    <div class="image-description"><b>Login Page</b><br/>
+                        <i>The login page where the user can either login as customer or vendor after creating an 
+                        account. If you login using vendor credentials it displays vendor page and customer credentials it displays 
+                        customer credentials.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="3.jpeg" alt="eCommerce Website Screenshot 3">
+                    <div class="image-description"><b>Vendor Home Page</b><br/>
+                        <i>The vendor profile where he can upload the products, view the products which has 
+                        been uploaded and also the view orders which have been placed by the customer.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="4_page-0001.jpg" alt="eCommerce Website Screenshot 4">
+                    <div class="image-description"><b>View products</b><br/>
+                        <i>Shows all the product details that are entered by the  vendor. The  product contains the name, amount and also description for the project.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="5_page-0001.jpg" alt="eCommerce Website Screenshot 5">
+                    <div class="image-description"><b>View Orders</b><br/>
+                    <i>Shows the orders placed by the customers  for the vendor to view the product details and the customer details which includes userid and address of the customer.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="6_page-0001.jpg" alt="eCommerce Website Screenshot 6">
+                    <div class="image-description"><b>Customer Home Page</b><br/>
+                    <i>Shows the customer profile where he can view all the products, add the products to the cart and place the order and also  can view the orders.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="7_page-0001.jpg" alt="eCommerce Website Screenshot 7">
+                    <div class="image-description"><b>View Cart</b><br/>
+                    <i>Shows product details that are added to cart by customer and displays total amount of the cart products and also the customer can place the order.</i></div>
+                </div>
+                <div class="image-item">
+                    <img src="8_page-0001.jpg" alt="eCommerce Website Screenshot 8">
+                    <div class="image-description"><b>Your Orders</b><br/>
+                    <i>Shows order details  which are  placed by the customer where  he  can check for the product details which  have been ordered. </i></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
